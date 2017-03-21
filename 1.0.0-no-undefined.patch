@@ -1,0 +1,30 @@
+--- origsrc/libosinfo-1.0.0/configure.ac	2016-08-10 04:21:17.000000000 -0500
++++ src/libosinfo-1.0.0/configure.ac	2017-03-16 19:49:52.904499500 -0500
+@@ -121,7 +121,7 @@ AC_SUBST([LIBOSINFO_VERSION])
+ AC_SUBST([LIBOSINFO_VERSION_INFO])
+ AC_SUBST([LIBOSINFO_VERSION_NUMBER])
+ 
+-NO_UNDEFINED_LDFLAGS=
++NO_UNDEFINED_FLAGS=
+ VERSION_SCRIPT_FLAGS=
+ USE_VERSION_DEFS=0
+ case "$host" in
+@@ -132,15 +132,15 @@ case "$host" in
+     ;;
+ 
+   *-*-cygwin*)
+-    NO_UNDEFINED_LDFLAGS="-no-undefined"
++    NO_UNDEFINED_FLAGS="-no-undefined"
+     ;;
+ 
+   *darwin*)
+-    NO_UNDEFINED_LDFLAGS="-Wl,-undefined,error"
++    NO_UNDEFINED_FLAGS="-Wl,-undefined,error"
+     ;;
+ 
+   *-*-solaris*)
+-    NO_UNDEFINED_LDFLAGS="-zdefs"
++    NO_UNDEFINED_FLAGS="-zdefs"
+     ;;
+ 
+   *)
